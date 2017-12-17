@@ -50,8 +50,8 @@ def vote
   @driver.action.move_to(voteResult).perform
   @driver.save_screenshot('result.png')
   score = voteResult.attribute("style")  
-  return /\d+(\.\d+)?%/.match(score)[0]
+  return /\d+(\.\d+)?/.match(score)[0]
 end
 
-puts "Current score for Kanye : " + run
+puts run
 @driver.quit  
